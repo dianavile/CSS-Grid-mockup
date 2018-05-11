@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+/* now we add some paddings on the sides*/
+main {
+	padding: 0 2em;
+}
+/* and center headings */
+main h2 {
+	text-align: center;
+}
+
+#top {
+	background: black;
+	color: white;
+	height: 10vh;
+}
+
+#top h1, #top h2 {
+	margin: 0;
+	display: inline-block;
+	padding: 0 0.5em;
+	line-height: 10vh;
+}
+
+#top h2 {
+	float: right;
+}
+
+#header img{
+	width: 100%;
+}
+
+.dates {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+.campus {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 1em;
+	margin-bottom: 2em;
+}
+.campus img {
+	max-width: 100%;
+}
+
+footer {
+	background: black;
+	color: white;
+	text-align: center;
+	bottom: 0;
+	width:100vw;
+	padding: 1em 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 1em;
+	margin-bottom: 2em;
+}
+
+@media all and (max-width: 800px){
+	.campus {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	/* and hiding some elements from mobile version */
+	#top h2 {
+		display:none;
+	}
+}
+
+/* and make dates responsive as well */
+@media all and (max-width: 400px){
+	.campus, .dates {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media print {
+	.campus {
+		grid-template-columns: 1fr 1fr;
+	}
+}
